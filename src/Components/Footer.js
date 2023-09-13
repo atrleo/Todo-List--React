@@ -1,20 +1,17 @@
 import React,{useState} from 'react'
 
 export default function Footer() {
-  const[value,setValue]=useState(1);
-  const onclickUp = ()=>{
-  setValue(value+1);
+  let footerStyle = {
+    position: "relative",
+    top: "100vh",
+    width: "100%"
   }
-  const onclickDown = ()=>{
-  setValue(value-1);
-  }
+
   return (
     
-    <div className='my-3'>
-            {/* This section is a footer section */}
-            <button className='btn btn-primary' onClick={onclickDown}>Down</button>{value}
-            <button className='btn btn-primary' onClick={onclickUp}>up</button>
+    <footer className='my-3 bg-dark text-light py-1' style={footerStyle}>
+           <p className='text-center'>Copyright &copy; TodoLists.com</p>
             
-    </div>
+    </footer>
   )
 }
