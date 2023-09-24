@@ -16,9 +16,17 @@ function App() {
   }
 
 
+
+
   const addTodo = (title,desc)=>{
     console.log("I am adding to do",title,desc);
+    let sn;
+    if(todos.length==0){
+      sn=0;
+    }
+    else{
     let sn =  todos[todos.length-1].sn + 1;
+    }
     const myTodo ={
       sn: sn,
       title: title,
@@ -29,20 +37,21 @@ function App() {
   }
 
 
+
  const [todos, setTodos] = useState([
     {
       sn :1 ,
-      title:"1st todo",
+      title:"Shopping",
       desc : "To go to the mall"
     },
     {
       sn :2,
-      title:"2nd todo",
-      desc : "Bike servicing"
+      title:"Bike",
+      desc : "Go for Bike Servicing"
     },
     {
       sn:3,
-      title:"3rd todo",
+      title:"Learn",
       desc: "Revisit React"
     }
 
@@ -52,6 +61,8 @@ function App() {
   <Header title="Todo List" searchBar={false}/>
   < AddTodo addTodo={addTodo} />
   <Todos todos={todos} onDelete={onDelete}/>
+
+
 
   <Footer />
   </>
